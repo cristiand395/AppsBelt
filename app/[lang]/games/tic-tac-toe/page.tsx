@@ -101,8 +101,8 @@ export default function Page() {
   }
   return (
     <main className="board">
-      <h1>Tic-Tac-Toe</h1>
-      <button onClick={resetGame}>Play Again</button>
+      <h1 className="text--colors_primary">Tic-Tac-Toe</h1>
+      <button onClick={resetGame} className="text-slate-950 dark:text-gray-300">Play Again</button>
       <section className="game">
         {
           board.map((position, index) => {

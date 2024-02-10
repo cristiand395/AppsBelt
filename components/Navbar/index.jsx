@@ -1,80 +1,32 @@
-'use client';
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, NavbarItem, Link, Button } from "@nextui-org/react";
-import { Logo } from "./Logo.jsx";
+import Link from 'next/link';
+import Logo from './Logo'
+import dynamic from 'next/dynamic';
+
+const ThemeSwitcher = dynamic(() => import('./ThemeSwitcher'), {
+  ssr: false,
+});
 
 export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
-
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        />
-        <NavbarBrand>
+    <nav className='navbar w-full px-20 py-3 shadow-lg'>
+      <div className='flex items-center'>
+        <section className='nav-left font-bold mr-auto text-xl'>
           <Logo />
-          <p className="font-bold text-inherit">ACME</p>
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
+        </section>
+        <ul className='nav-links flex gap-16 items-center'>
+          <Link href='/'>
+            <li className="text--colors_primary">Home</li>
           </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+          <Link href='/about'>
+            <li className="text--colors_primary">About</li>
           </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+          <Link href='/contacts'>
+            <li className="text--colors_primary">Contacts</li>
           </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
+          <ThemeSwitcher />
+        </ul>
+      </div>
+    </nav>
   );
 }

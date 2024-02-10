@@ -18,12 +18,24 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+/** customized texts **/
+
+.text--colors_default {
+  @apply text-slate-900 dark:text-white;
+}
+
+.text--colors_primary {
+  @apply text-slate-800 dark:text-white;
+}
+
+/** customized backgrounds **/
+.bg--default {
+  @apply bg-white dark:bg-slate-900;
 }
 
 @layer utilities {
