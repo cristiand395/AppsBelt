@@ -16,13 +16,10 @@ export default function App() {
         </section>
         <ul className='nav-links flex gap-16 items-center'>
           <Link href='/'>
-            <li className="text--colors_primary">Home</li>
+            <li className="text--color_primary font-medium">Home</li>
           </Link>
           <Link href='/about'>
-            <li className="text--colors_primary">About</li>
-          </Link>
-          <Link href='/contacts'>
-            <li className="text--colors_primary">Contacts</li>
+            <li className="text--color_primary font-medium">Games</li>
           </Link>
           <ThemeSwitcher />
         </ul>

@@ -54,15 +54,15 @@ function ThemeSwitcher() {
   }
   return (
     // <div className='theme-switcher items-center ml-12'>
-    <div onClick={toggleSwitch} className={`bg-transparent flex-start flex h-[40px] w-[100px] rounded-[50px] bg p-[5px] shadow-inner hover:cursor-pointer  ${isLight && 'place-content-end'}`}>
+    <div onClick={toggleSwitch} className={`bg-transparent  flex-start flex h-[30px] w-[70px] rounded-[50px] bg p-[5px] shadow-md hover:cursor-pointer  ${isLight && 'place-content-end'}`}>
 
       <motion.div
-        className="flex h-[30px] w-[40px] items-center justify-center rounded-full"
+        className="flex h-[20px] w-[40px] items-center justify-center rounded-full"
         layout
         transition={spring}
       >
         <motion.div whileTap={{ rotate: 360 }}>
-          {isLight ? (<RiSunFill className="h-6 w-6 text-yellow-300" />) : (<RiMoonClearFill className="h-6 w-6 text-slate-200" />)}
+          {isLight ? (<RiSunFill className="h-6 w-6 text-[#181720]" />) : (<RiMoonClearFill className="h-6 w-6 text-slate-200" />)}
         </motion.div>
 
       </motion.div>

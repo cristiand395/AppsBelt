@@ -32,7 +32,7 @@ const Square = ({ children, updateBoard, index, isSelected }: SquareProps) => {
   return (
     <div
       onClick={handleClick}
-      className={`square ${isSelected ? 'is-selected' : ''}`}>
+      className={`text-5xl cursor-pointer place-items-center rounded grid border border-solid border-slate-900 size-[100px] dark:border-white text-slate-900 dark:text-white  ${isSelected ? 'is-selected' : ''}`}>
       {children}
     </div>
   )
@@ -101,7 +101,7 @@ export default function Page() {
   }
   return (
     <main className="board">
-      <h1 className="text--colors_primary">Tic-Tac-Toe</h1>
+      <h1 className="text--color_primary text-3xl">Tic Tac Toe</h1>
       <button onClick={resetGame} className="text-slate-950 dark:text-gray-300">Play Again</button>
       <section className="game">
         {

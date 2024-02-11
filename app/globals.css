@@ -24,12 +24,7 @@ body {
 }
 
 /** customized texts **/
-
-.text--colors_default {
-  @apply text-slate-900 dark:text-white;
-}
-
-.text--colors_primary {
+.text--color_primary {
   @apply text-slate-800 dark:text-white;
 }
 
